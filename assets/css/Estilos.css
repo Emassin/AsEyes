@@ -5,133 +5,216 @@
   box-sizing: border-box; padding: 0; margin: 0;
 }
 
-li, button{
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  color: #edf0f1;
-  text-decoration: none;
-  }
-
-header{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  }
-
-#row{
-  display: flex;
-  flex-flow: row;
+html {
+  height: 100%;
+  width: 100%;
 }
 
+/* estilizado y posicionado del logo del sol*/
 .logo {
     cursor: pointer;
-    order: 3;
-    margin-left: auto;
-    width:8%;
-    position: relative;
-    background-color: white;
+    width: 10%;
     border-radius: 50%;
-  }
+    border-style: solid;
+    border-width: thin;
+    display: inline;
+    margin: auto;
+    border-color: black;
+    background-color: white;
+    margin-left: 50%;
+    }
 
-.nav_links li a{
-  transition: all 0.3s ease 0s;
-  padding: 25px;
-  margin-right: auto;
-  display: inline;
-}
-
-.nav_links li a: hover{
-  color: #0088a9;
-}
-
-button{
-  padding: 9px 25px;
-  background-color: rgba(0,136,169,1);
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-  margin-left: 20px;
-}
-
-button: hover{
-  background-color: rgba(0,136,169,0);
-}
-
-.header {
-  width: 100%;
-  background-color: #00aae4;
-  margin-bottom: 25px;
-  color: #f1f1f1;
-}
-
-.content {
-  padding: 20px;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-.sticky + .content {
-  padding-top: 102px;
-}
-
-.As{
-  text-align:center;
-  position:static;
+.As {
+  text-align: center;
+  position: relative;
   font-style: normal;
-  font-family: Tourney;
+  font-family: "Montserrat";
   font-size: 35px;
   margin-top: 15px;
   margin-bottom: 20px;
-  }
-
-body{
-  width: 100%;
 }
 
-h1{
+/* fondo del body con color personalizado tipo trama */
+body {
+  width: 100%;
+  background-color:silver;
+  background-color:black;
+  background:
+radial-gradient(black 15%, transparent 16%) 0 0,
+radial-gradient(black 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background-color:#282828;
+background-size:16px 16px;
+}
+
+/* estilo de las tarjetas */
+@media only screen and (min-width: 0em){
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.elemcard {
+  order: 1;
+  flex-basis: 100%;
+  height: 300px;
+}
+
+@media only screen and (min-width:55em){
+.content{
+    flex-flow: nowrap;
+  }
+
+.elemcard {
+  width: 50%;
+ }
+}
+
+.twitch {
+  height: 80px;
+  width: 90px;
+  margin-left: 0;
+  border-radius: 15%;
+}
+
+.contenedor {
+width:100%;
+max-width: auto;
+/*max-width: 1000px;*/
+margin: 10px;
+box-sizing: content-box;
+align-items: center;
+}
+
+.header {
+  background-image: none;
+  width: auto;
+}
+
+.contenido {
+  background-color: #FFFFF0;
+}
+
+.arti {
+  background-color: rgba(255, 153, 51, 1);
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  margin: 10px;
+}
+
+.elemcard {
+    border-radius: 10px;
+    background: linear-gradient(#833ab4, #fd1d1d, #fcb045);
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #000000;
+    box-shadow: -1px 0px 15px 3px rgb(0 0 0 / 75%);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.footer {
+  background: #12203E;
+  color: #fff;
+  width: 100%;
+  height: auto;
+  position: absolute;
+}
+
+h1 {
   font-size: 25px;
-  font-family: sans-serif;
+  font-family: "Montserrat";
   text-align: center;
 }
 
-p{
+h2 {
+  font-size: 22px;
+  font-family: "Montserrat";
+  text-align: center;
+}
+
+h3 {
+  font-size: 22px;
+  font-family: "Montserrat";
+  text-align: center;
+}
+
+p {
   font-size: 20px;
-  font-family: sans-serif;
-  padding-left: 25px;
+  font-family: "Montserrat";
+  text-align: center;
 }
 
-.columns{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-  justify-content: space-around;
-  margin-top: 25px;
-}
-
-.elemcard{
-  text-align: left;
-  font-family: sans-serif;
-  width: 60%;
-  height: 15%;
-}
-
-footer{
-  width: 100%;
-  background-color: #00aae4;
-}
-
-.Con{
-  font-size: 10px;
-  }
-
-a{
+a {
 text-decoration-line: none;
-text-decoration-color: black;
+text-decoration-color: #818181;
 text-decoration-style: solid;
 }
+
+.sidebar {
+  height: 100%;
+  width: 0; /* se cambia con JS */
+  position: fixed;
+  z-index: 1; /* se queda arriba */
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden; /* desactiva el scroll horizontal */
+  padding-top: 60px;
+  transition: 0.5s; /* 0.5 segundos de transition al sidebar */
+}
+
+/* links del sidebar */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* hover en links de navegación */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Posiciona y da estilo al botón de cerrar */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Botón que abre la sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+
+/* lleva la página de contenido a la derecha al abrir el sidebar */
+#main {
+  transition: margin-left .5s; /* Transición */
+  padding: 10px;
+}
+
+/* en pantallas de altura menor a 450px cambia el estilo del sidebar (menos padding y menor tamaño de letra) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
